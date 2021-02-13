@@ -131,7 +131,64 @@
         </div>
       </nav>
       <!-- End Navbar -->
-      
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card card-plain">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title mt-0"> Table on Plain Background</h4>
+                  <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Nama Product
+                        </th>
+                        <th>
+                          Description Product
+                        </th>
+                        <th>
+                          Action
+                        </th>
+                      </thead>
+                      <tbody>
+                        <?php $no=1; foreach($product as $key => $value) { ?>
+                        <tr>
+                          <td>
+                            <?= $no++; ?>
+                          </td>
+                          <td>
+                            <?= $value['product_name']?>
+                          </td>
+                          <td>
+                            <?= $value['product_description']?>
+                          </td>
+                          <td>
+                          <a class="waves-effect waves-light btn">Edit</a>
+                          <a class="waves-effect waves-light btn">delete</a>
+                          </td>
+                          <td></td>
+                        </tr>
+                       <?php } ?>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </body>
       
 <?= $this->endSection() ?>
