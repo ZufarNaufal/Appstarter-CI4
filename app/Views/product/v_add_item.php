@@ -134,63 +134,35 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-12">
-              
-              </div>
-            </div>
-    
-            <div class="col-md-12">
-            <a class="waves-effect waves-light btn" href="<?= base_url('product/add_item')?>">Add Item</a>
-              <div class="card card-plain">
+            <div class="col-md-8">
+              <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title mt-0"> Table on Plain Background</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <h4 class="card-title">Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover">
-                      <thead class="">
-                        <th>
-                          ID
-                        </th>
-                        <th>
-                          Nama Product
-                        </th>
-                        <th>
-                          Description Product
-                        </th>
-                        <th>
-                          Action
-                        </th>
-                      </thead>
-                      <tbody>
-                        <?php $no=1; foreach($product as $key => $value) { ?>
-                        <tr>
-                          <td>
-                            <?= $no++; ?>
-                          </td>
-                          <td>
-                            <?= $value['product_name']?>
-                          </td>
-                          <td>
-                            <?= $value['product_description']?>
-                          </td>
-                          <td>
-                          <a class="waves-effect waves-light btn">Edit</a>
-                          <a class="waves-effect waves-light btn">delete</a>
-                          </td>
-                          <td></td>
-                        </tr>
-                       <?php } ?>
-                      </tbody>
-                    </table>
-                  </div>
+                  <form>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
       </body>
       
 <?= $this->endSection() ?>

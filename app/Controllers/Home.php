@@ -10,7 +10,7 @@ class Home extends BaseController
 			'title' => 'Appstarter || Home',
 			'isi' => 'home'
 		];
-		echo view('layouts/wrapper', $data);
+		echo view('home', $data);
 		//return view('welcome_message');
 	}
 }

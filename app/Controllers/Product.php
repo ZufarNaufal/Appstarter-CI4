@@ -24,4 +24,20 @@ class Product extends BaseController
 		echo view('product/template');
 		echo view('product/v_product', $data);
 	}
+
+	public function add_item()
+	{
+		$data = [
+			'title' => 'Appstarter || Add Item',
+			'content' => 'v_add_item'
+			//''
+		];
+		echo view('product/template');
+		echo view('product/v_add_item', $data);
+	}
+
+	public function delete()
+	{
+
+	}
 }
