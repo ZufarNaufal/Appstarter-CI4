@@ -15,13 +15,14 @@
         <div class="nav-wrapper teal darken-4">
         <a href="#" class="brand-logo center">AppStarter</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="#">Example 1</a></li>
+            <li><a href="#">Example 2</a></li>
+            <li><a href="#">Example 3</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="<?= base_url('product/index'); ?>">Home</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="<?= base_url('LoginController/index')?>">Sign In</a></li>
+        <li><a href="<?= base_url('RegisterController/index')?>">Sign Up</a></li>
         </ul>
         </div>
     </nav>

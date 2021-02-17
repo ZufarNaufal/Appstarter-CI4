@@ -23,6 +23,11 @@ class Product extends Migration
 					'type' => 'TEXT',
 					'null' => true,
 			],
+
+			'image_product' => [
+				'type' => 'VARCHAR',
+				'constraint' => '255',
+			],
 	]);
 	$this->forge->addKey('product_id', true);
 	$this->forge->createTable('product');
