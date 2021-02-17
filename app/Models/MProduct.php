@@ -44,4 +44,9 @@ class MProduct extends Model
 	{
 		return $this->db->table('product')->get()->getResultArray();
 	}
+
+	public function insert_product($data)
+	{
+		return $this->db->table('product')->insert($data);
+	}
 }

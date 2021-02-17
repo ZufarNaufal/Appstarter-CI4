@@ -141,23 +141,23 @@
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="<?= base_url('product/save_item'); ?>" method="POST">
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">Product Name</label>
+                          <input name="product_name" class="form-control" required>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control">
+                          <label class="bmd-label-floating">Product Description</label>
+                          <input name="product_description" class="form-control" required>
                         </div>
                       </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <button type="submit" class="btn btn-primary pull-right">Add Item</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

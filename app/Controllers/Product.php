@@ -11,17 +11,17 @@ class Product extends BaseController
 
 	public function __construct()
 	{
-		$this->ProductModel = new MProduct();
+		$this->MProduct = new MProduct();
 	}
 
 	public function index()
 	{
 		$data = [
 			'title' => 'Appstarter || Product',
-			'product' => $this->ProductModel->get_product(),
+			'product' => $this->MProduct->get_product(),
 			'content' => 'v_product'
 		];
-		echo view('product/template');
+		echo view('product/template', $data);
 		echo view('product/v_product', $data);
 	}
 
@@ -34,6 +34,18 @@ class Product extends BaseController
 		];
 		echo view('product/template');
 		echo view('product/v_add_item', $data);
+	}
+
+	public function save_item()
+	{
+		$data = [
+			'product_name' => $this->request->getPost('product_name'),
+			'product_description' => $this->request->getPost('product_description'),
+		];
+
+		$this->MProduct->insert_product($data);
+//		session()->setFlashdata('success', 'Add item Succedd');
+		return redirect()->to(base_url('product'));
 	}
 
 	public function delete()
