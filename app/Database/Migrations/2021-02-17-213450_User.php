@@ -29,13 +29,13 @@ class User extends Migration
 			'password' => [
 				'type' => 'VARCHAR',
 				'constraint' => 255,
-				'null' => true,
+				'null' => false,
 			],
 
 			'level' => [
 				'type' => 'INT',
 				'constraint' => 1,
-				'null' => true,
+				'null' => false,
 			]
 	]);
 	$this->forge->addKey('user_id', true);
