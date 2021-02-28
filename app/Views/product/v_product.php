@@ -13,14 +13,14 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item active">
             <a class="nav-link" href="<?= base_url('home')?>">
               <i class="material-icons">dashboard</i>
               <p>Home</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="<?= base_url('UserController/index'); ?>">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
@@ -79,13 +79,11 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end">
             <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
+            <div class="info">
+              <a href="#" class="d-block">
+              <?= session()->get('name_user'); ?>
+              </a>
+            </div>
             </form>
            
           </div>
@@ -99,8 +97,9 @@
               
               </div>
             </div>
-    
+            
             <div class="col-md-12">
+            
             <a class="waves-effect waves-light btn" href="<?= base_url('product/add_item')?>">Add Item</a>
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
@@ -137,8 +136,8 @@
                             <?= $value['product_description']?>
                           </td>
                           <td>
-                          <a class="waves-effect waves-light btn">Edit</a>
-                          <a class="waves-effect waves-light btn">delete</a>
+                          <a href="<?= base_url('product/edit'); ?>" class="waves-effect waves-light btn">Edit</a>
+                          <a href="<?= base_url('product/index'); ?>" class="waves-effect waves-light btn" onclick="return ">delete</a>
                           </td>
                           <td></td>
                         </tr>

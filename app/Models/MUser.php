@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MProduct extends Model
+class MUser extends Model
 {
 	protected $DBGroup              = 'default';
-	protected $table                = 'mproducts';
+	protected $table                = 'musers';
 	protected $primaryKey           = 'id';
 	protected $useAutoIncrement     = true;
 	protected $insertID             = 0;
@@ -39,19 +39,4 @@ class MProduct extends Model
 	protected $afterFind            = [];
 	protected $beforeDelete         = [];
 	protected $afterDelete          = [];
-
-	public function get_product()
-	{
-		return $this->db->table('product')->get()->getResultArray();
-	}
-
-	public function insert_product($data)
-	{
-		return $this->db->table('product')->insert($data);
-	}
-
-	public function delete_product($id, $data)
-	{
-		return $this->db->table('product')->delete($id);
-	}
 }

@@ -16,6 +16,10 @@ class Product extends BaseController
 
 	public function index()
 	{
+		if(session()->get('username')=='') {
+			session()->setFlashdata('Failed, You Must Login Fisrt');
+			return redirect()->to(base_url('home'));
+		}
 		$data = [
 			'title' => 'Appstarter || Product',
 			'product' => $this->MProduct->get_product(),
@@ -27,17 +31,31 @@ class Product extends BaseController
 
 	public function add_item()
 	{
+		if(session()->get('username')=='') {
+			session()->setFlashdata('Failed, You Must Login Fisrt');
+			return redirect()->to(base_url('home'));
+		}
 		$data = [
 			'title' => 'Appstarter || Add Item',
 			'content' => 'v_add_item'
 			//''
 		];
-		echo view('product/template');
+		echo view('product/template', $data);
 		echo view('product/v_add_item', $data);
+	}
+
+	public function edit()
+	{
+		$data = [
+			'title' => 'Appstarter || Edit data'
+		];
+
+		echo view('product/v_edit');
 	}
 
 	public function save_item()
 	{
+		
 		$data = [
 			'product_name' => $this->request->getPost('product_name'),
 			'product_description' => $this->request->getPost('product_description'),
