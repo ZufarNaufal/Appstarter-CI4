@@ -1,9 +1,15 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\MProduct;
 
 class Home extends BaseController
 {
+	public function __construct()
+	{
+		$this->MProduct = new MProduct();
+	}
+	
 	public function index()
 	{
 		$data = [
