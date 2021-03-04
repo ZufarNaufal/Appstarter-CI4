@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    <?= $title; ?>
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -19,6 +19,11 @@
   <link href="<?= base_url() ?>/template/assets/demo/demo.css" rel="stylesheet" />
 </head>
 <body class="">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#5000ca" fill-opacity="1" d="M0,288L80,256C160,224,320,160,480,154.7C640,149,800,203,960,224C1120,245,1280,235,1360,229.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+  </path>
+  
+</svg>
+<h1><p class="text-center"><?= $title; ?></p></h1>
 <div class="col">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -80,6 +85,33 @@
         </div>
       </nav>
       <!-- End Navbar -->
+      <div class="container">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card mb-5">
+  <img src="<?= base_url() ?>/template/assets/img/bg2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+  <?php foreach($product as $key => $value) { ?>
+    <h5 class="card-title"><?= $value['product_name']?></h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <?php } ?>
+  </div>
+</div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card mb-5">
+  <img src="<?= base_url() ?>/template/assets/img/bg2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+  <?php foreach($product as $key => $value) { ?>
+    <h5 class="card-title"><?= $value['product_name']?></h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <?php } ?>
+  </div>
+</div>
+        </div>
+      </div>
+      
       <div class="content">
         <div class="container-fluid">
           <div class="row">
@@ -106,6 +138,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
@@ -139,12 +172,10 @@
                   </div>
                 </div>
               </div>
-              
+             
             </div>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,288L48,277.3C96,267,192,245,288,229.3C384,213,480,203,576,213.3C672,224,768,256,864,256C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-    
 </body>
+
 <!--   Core JS Files   -->
 <script src="<?= base_url() ?>/template/assets/js/core/jquery.min.js"></script>
   <script src="<?= base_url() ?>/template/assets/js/core/popper.min.js"></script>

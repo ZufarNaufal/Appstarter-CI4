@@ -5,6 +5,8 @@ use App\Models\MProduct;
 
 class Home extends BaseController
 {
+	protected $ProductModel;
+
 	public function __construct()
 	{
 		$this->MProduct = new MProduct();
@@ -14,6 +16,7 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Appstarter || Home',
+			'product' => $this->MProduct->get_product(),
 			'isi' => 'home'
 		];
 		echo view('home', $data);
